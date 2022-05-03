@@ -5,7 +5,7 @@ module.exports = {
   }, {
       name: 'twspace-crawler',
       namespace: 'crawler',
-      script: './dist/index.js',
+      script: './index.js',
       watch: ["./index.js", "./ecosystem.config.js, ./configtws,json"],
       ignore_watch : ["node_modules"],
       args: '--config ./configtws.json --index ./index.js',
