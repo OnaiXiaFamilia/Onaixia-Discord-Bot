@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint \"src/**/*.ts\"",
+    "fmt": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,13 @@
     "dotenv": "^16.0.0",
     "pm2": "^5.2.0",
     "twspace-crawler": "^1.11.8"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
   }
 }
