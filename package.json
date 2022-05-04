@@ -6,13 +6,20 @@
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "lint": "eslint \"src/**/*.ts\"",
-    "fmt": "prettier --config .prettierrc \"src/**/*.ts\" --write"
+    "fmt": "prettier --config .prettierrc.json \"src/**/*.ts\" --write",
+    "build": "tsc -p tsconfig.json",
+    "start:bot": "node build/main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "@discordx/importer": "^1.1.2",
+    "@discordx/koa": "^1.0.9",
     "discord.js": "^13.6.0",
+    "discordx": "^9.5.3",
     "dotenv": "^16.0.0",
     "pm2": "^5.2.0",
     "twspace-crawler": "^1.11.8"
