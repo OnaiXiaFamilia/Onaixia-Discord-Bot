@@ -19,6 +19,7 @@
     "@discordx/importer": "^1.1.2",
     "@discordx/koa": "^1.0.9",
     "@discordx/pagination": "^2.1.1",
+    "axios": "^0.27.2",
     "discord.js": "^13.6.0",
     "discordx": "^9.5.3",
     "dotenv": "^16.0.0",
