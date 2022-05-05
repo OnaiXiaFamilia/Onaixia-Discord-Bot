@@ -41,10 +41,10 @@ client.on('messageCreate', (message: Message) => {
 async function run() {
     await importx(__dirname + '/{events,commands,api}/**/*.{ts,js}')
 
-    if (!process.env.TOKEN) {
+    if (!process.env.DISCORD_TOKEN) {
         throw Error('Could not find BOT_TOKEN in your environment')
     }
-    await client.login(process.env.TOKEN)
+    await client.login(process.env.DISCORD_TOKEN)
 }
 
 run()
