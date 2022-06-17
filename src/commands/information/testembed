@@ -1,0 +1,61 @@
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const { MessageEmbed, MessageAttachment } = require("discord.js");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("TestEmbed")
+    .setDescription("Testing Embed~ i hope this works uwu~"),
+  async execute(interaction) {
+    const file = new MessageAttachment("./src/images/OnaixiaAvatar.png");
+
+    const TestEmbed = {
+      color: 0x0099ff,
+      title: "this is an test embed~ dayon~",
+      url: "https://onaixia.com",
+      author: {
+        name: "JoqniX",
+        url: "https://youtube.com/joqnix",
+      },
+      description: "This do be a description dayon~",
+      thumbnail: {
+        url: "https://i.imgur.com/AfFp7pu.png",
+      },
+      fields: [
+        {
+          name: "Regular field title",
+          value: "Some value here",
+        },
+        {
+          name: "\u200b",
+          value: "\u200b",
+          inline: false,
+        },
+        {
+          name: "Inline field title",
+          value: "Some value here",
+          inline: true,
+        },
+        {
+          name: "Inline field title",
+          value: "Some value here",
+          inline: true,
+        },
+        {
+          name: "Inline field title",
+          value: "Some value here",
+          inline: true,
+        },
+      ],
+      image: {
+        url: "attachment://OnaixiaAvatar.png",
+      },
+      timestamp: new Date(),
+      footer: {
+        text: "Some footer text here"(),
+        icon_url: "https://i.imgur.com/AfFp7pu.png",
+      },
+    };
+    channel.send({ embeds: [TestEmbed] });
+  },
+};
+await interaction.reply({ embeds: [TestEmbed] });
