@@ -25,6 +25,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.17.0",
     "fs": "^0.0.1-security",
+    "mongoose": "^6.3.8",
     "twitter-api-v2": "^1.12.2"
   }
 }
