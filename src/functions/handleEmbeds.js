@@ -9,6 +9,7 @@ module.exports = (client) => {
         .filter((file) => file.endsWith(".js"));
       for (const file of embedFiles) {
         const embed = require(`../embeds/${folder}/${file}`);
+        client.embeds.set(embed.data.name, embed);
       }
     }
   };

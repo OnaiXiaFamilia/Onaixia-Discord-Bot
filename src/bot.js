@@ -28,6 +28,7 @@ const commandFolders = fs.readdirSync("./src/commands");
   client.handleCommands(commandFolders, "./src/commands");
   client.handleButtons();
   client.handleEmbeds();
+  client.handleMenus();
   client.login(process.env.DISCORD_TOKEN);
   client.dbLogin();
 })();

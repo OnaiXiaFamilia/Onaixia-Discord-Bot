@@ -24,8 +24,8 @@ module.exports = {
         });
       try {
         await menu.execute(interaction, client);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.error(err);
         await interaction.reply({
           content: "There was an error while executing this menu!",
           ephemeral: true,
@@ -44,6 +44,22 @@ module.exports = {
         console.error(error);
         await interaction.reply({
           content: "There was an error while executing this button!",
+          ephemeral: true,
+        });
+      }
+    } else if (interaction.isEmbed()) {
+      const embed = client.embeds.get(interaction.customId);
+      if (!embed)
+        return await interaction.reply({
+          content: `There was no embed code found for this embed.`,
+        });
+
+      try {
+        await embed.execute(interaction, client);
+      } catch (error) {
+        console.error(error);
+        await interaction.reply({
+          content: "There was an error while executing this embed!",
           ephemeral: true,
         });
       }

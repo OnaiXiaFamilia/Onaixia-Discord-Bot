@@ -3,12 +3,13 @@ module.exports = {
     name: `colour-select`,
   },
   async execute(interaction, client) {
-    let color = "";
-    await interaction.value.forEach(async (value) => {
-      color += `${value}`;
+    let colours = "";
+    await interaction.values.forEach(async (value) => {
+      colours += `${value}`;
     });
+
     await interaction.reply({
-      content: `wow your fav color are: ${color}`,
+      content: `wow your fav color are: ${colours}`,
     });
   },
 };
